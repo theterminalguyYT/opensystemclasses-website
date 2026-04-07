@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSystemClasses | Empowering Young Makers</title>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --dark-color: #2d3748;
+            --light-color: #f7fafc;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #6a5acd);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), #6a5acd);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #3a5bef;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 1rem auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .curriculum-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .curriculum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .curriculum-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .curriculum-card-content {
+            padding: 1.5rem;
+        }
+
+        .curriculum-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .curriculum-card p {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            background-color: var(--secondary-color);
+            padding: 3rem 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .testimonial-card .author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #b8c5d1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a5568;
+            color: #b8c5d1;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .python { background-color: #3776AB; }
+        .raspberry { background-color: #C51A4A; }
+        .linux { background-color: #FCC624; color: #000; }
+        .git { background-color: #F05032; }
+        .microbit { background-color: #00ED00; color: #000; }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #6a5acd);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .highlight {
+            background-color: #fff0e6;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
+
+        .highlight h3 {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">⚡ OpenSystemClasses</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container">
+            <h1>Empowering Young Makers & Engineers</h1>
+            <p>Hands-on learning in robotics, programming, and embedded systems for ages 8-14</p>
+            <a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS" class="btn btn-primary">View Curriculum on GitHub</a>
+        </div>
+    </header>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About OpenSystemClasses</h2>
+            </div>
+            <div class="highlight">
+                <h3>🎯 Our Mission</h3>
+                <p>To bridge the gap between theory and practice by providing hands-on, project-based learning experiences that turn young learners into confident makers and problem solvers.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="tech-icon python">🐍</div>
+                    <h3>Python Programming</h3>
+                    <p>Learn programming fundamentals with Python, the most beginner-friendly language for young learners.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="tech-icon raspberry">🍓</div>
+                    <h3>Embedded Systems</h3>
+                    <p>Hands-on projects with Raspberry Pi Pico and MicroPython for real-world applications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="tech-icon microbit">🤖</div>
+                    <h3>Robotics</h3>
+                    <p>Build and program robots to understand automation, sensors, and control systems.</p>
+                </div>
+            </div>
+
+            <div class="tech-icons">
+                <div class="tech-icon python" title="Python">🐍</div>
+                <div class="tech-icon raspberry" title="Raspberry Pi">🍓</div>
+                <div class="tech-icon linux" title="Linux">🐧</div>
+                <div class="tech-icon git" title="Git">🌱</div>
+                <div class="tech-icon microbit" title="Micro:bit">🤖</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Ready to Start Learning?</h2>
+            <p>Our curriculum is completely free and open-source. Clone the repository and start your journey into the world of making and engineering today!</p>
+            <a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS" class="btn btn-primary">Get Started on GitHub</a>
+        </div>
+    </section>
+
+    <section class="section" id="curriculum">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Curriculum</h2>
+            </div>
+            
+            <div class="highlight">
+                <h3>📚 What You'll Learn</h3>
+                <p>Our comprehensive curriculum is designed to take students from complete beginners to confident makers through hands-on, project-based learning.</p>
+            </div>
+
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <div style="color: white; font-size: 3rem;">🐍</div>
+                    </div>
+                    <div class="curriculum-card-content">
+                        <h3>Python Fundamentals</h3>
+                        <p>Learn programming basics, variables, loops, functions, and data structures through interactive examples.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+
+                <div class="curriculum-card">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <div style="color: white; font-size: 3rem;">🍓</div>
+                    </div>
+                    <div class="curriculum-card-content">
+                        <h3>Raspberry Pi Pico</h3>
+                        <p>Explore embedded systems with MicroPython on the Raspberry Pi Pico microcontroller.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+
+                <div class="curriculum-card">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <div style="color: white; font-size: 3rem;">🤖</div>
+                    </div>
+                    <div class="curriculum-card-content">
+                        <h3>Robotics Projects</h3>
+                        <p>Build and program robots using sensors, motors, and control algorithms.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+
+                <div class="curriculum-card">
+                    <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <div style="color: white; font-size: 3rem;">🔌</div>
+                    </div>
+                    <div class="curriculum-card-content">
+                        <h3>Electronics Basics</h3>
+                        <p>Understand circuits, components, and how to build electronic projects.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What People Are Saying</h2>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote">"My son went from knowing nothing about coding to building his own robot projects. The hands-on approach really works!"</div>
+                    <div class="author">- Parent of a 12-year-old student</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote">"As an educator, I appreciate the well-structured lessons and comprehensive teacher materials. It saves me hours of preparation."</div>
+                    <div class="author">- Middle School STEM Teacher</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote">"The project-based learning approach keeps students engaged and excited about learning technology."</div>
+                    <div class="author">- School Administrator</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section" id="contact">
+        <div class="container">
+            <h2>Join Our Learning Community</h2>
+            <p>Whether you're a student, parent, or educator, we'd love to have you join our community of makers and learners.</p>
+            <div style="margin: 2rem 0;">
+                <a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS" class="btn" style="margin-right: 1rem;">📚 View Curriculum</a>
+                <a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS/issues" class="btn">💬 Ask a Question</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>OpenSystemClasses</h3>
+                    <p>Empowering young makers through hands-on technology education.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/theterminalguyYT" target="_blank" title="GitHub">📱</a>
+                        <a href="#" target="_blank" title="Twitter">🐦</a>
+                        <a href="#" target="_blank" title="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#curriculum">Curriculum</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS">GitHub</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS">Curriculum Repository</a></li>
+                        <li><a href="#">Getting Started Guide</a></li>
+                        <li><a href="#">Educator Resources</a></li>
+                        <li><a href="#">Hardware Requirements</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                        <li><a href="#">License</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 OpenSystemClasses. All rights reserved. | Made with ❤️ for young makers
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive elements
+        const cards = document.querySelectorAll('.curriculum-card, .feature-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
