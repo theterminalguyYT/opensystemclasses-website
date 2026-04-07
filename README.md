@@ -81,7 +81,7 @@ For inquiries about the Learn By Make curriculum or website:
 
 - This website is for informational purposes only
 - Curriculum access requires proper licensing
-- All content is copyright © 2024 Learn By Make
+- All content is copyright © 2026 Learn By Make
 - Unauthorized use or distribution is prohibited
 
 ---
