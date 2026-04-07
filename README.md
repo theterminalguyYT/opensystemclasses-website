@@ -1,10 +1,10 @@
-# OpenSystemClasses Website 🌐
+# Learn By Make Website 🌐
 
-This repository contains the official website for OpenSystemClasses - a hands-on technology education curriculum for young makers.
+This repository contains the official website for Learn By Make - a hands-on technology education curriculum for young makers.
 
 ## 🚀 Website
 
-👉 **Visit the live website**: [https://theterminalguyYT.github.io/opensystemclasses-website/](https://theterminalguyYT.github.io/opensystemclasses-website/)
+👉 **Visit the live website**: [https://theterminalguyYT.github.io/learnbymake-website/](https://theterminalguyYT.github.io/learnbymake-website/)
 
 ## 📁 Project Structure
 
