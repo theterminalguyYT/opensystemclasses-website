@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | OpenSystemClasses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .error-page {
+            text-align: center;
+            padding: 4rem 0;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .error-page h1 {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .error-page h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .error-page p {
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .error-illustration {
+            font-size: 4rem;
+            margin: 2rem 0;
+            color: var(--accent-color);
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i>⚡</i> OpenSystemClasses
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/curriculum.html">Curriculum</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="https://github.com/theterminalguyYT/OPENSYSTEMCLASS" target="_blank">GitHub</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="error-page">
+        <h1>404</h1>
+        <div class="error-illustration">🤖💻</div>
+        <h2>Oops! Page Not Found</h2>
+        <p>The page you're looking for seems to have taken a wrong turn. Don't worry, our robot friends are searching for it!</p>
+        
+        <div class="error-actions">
+            <a href="index.html" class="btn btn-primary">Return Home</a>
+            <a href="pages/curriculum.html" class="btn btn-outline">Explore Curriculum</a>
+            <a href="pages/contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i>⚡</i> OpenSystemClasses</h3>
+                    <p>Empowering young makers through hands-on technology education.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 OpenSystemClasses. All rights reserved. | 
+                <a href="mailto:theterminalguy.yt@gmail.com">theterminalguy.yt@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
